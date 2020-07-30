@@ -1,8 +1,13 @@
+//Definicoes de variaveis para toda a pagina (ou site)
+//Variaveis essas relacionadas a operações com Metamask e Contratos Inteligentes no Ethereum
 var contaAtual;
 var provedorDeSignatarios;
 var signatario;
 var contratoComSignatario;
 
+/*
+FUNCOES RELACIONADAS A OPERACOES COM METAMASK E CONTRATOS INTELIGENTES NO ETHEREUM
+*/
 function conectaAoMetamask() {
   event.preventDefault();
   console.log("conectaAoMetamask chamado");
@@ -32,18 +37,18 @@ function requisitaAcessoAContas() {
 function gerenciaTrocaDeSelecaoDeContas(_contas) {
   var contas = _contas.result;
   console.log("gerenciaTrocaDeSelecaoDeEndereco", contas.length);
-  if (contas.length === 0) {
-    alert("Por favor instale o MetaMask em metamask.io");
-    return;
-  }
   provedorDeSignatarios = new ethers.providers.Web3Provider(web3.currentProvider);
   signatario = provedorDeSignatarios.getSigner();
   contratoComSignatario = new ethers.Contract(enderecoContrato, abiContrato, signatario);
-  if (contas[0] !== contaAtual) {
+  if (contas.length === 0) {
+    alert("Por favor instale o MetaMask em metamask.io");
+  } else if (contas[0] !== contaAtual) {
     contaAtual = contas[0];
     if (contaAtual) {
       console.log("gerenciaTrocaDeSelecaoDeContas objects", contas, contaAtual, signatario, contratoComSignatario);
-      $("#btnRegistrar").prop("disabled", false);
+      $("#btnSalvar").prop("disabled", false);
     }
   }
 }
+
+var abiContratoInteligente;
