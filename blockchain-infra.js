@@ -1,13 +1,20 @@
 //Definicoes de variaveis para toda a pagina (ou site)
 //Variaveis essas relacionadas a operações com Metamask e Contratos Inteligentes no Ethereum
 var contaAtual;
+var provedor;
 var provedorDeSignatarios;
 var signatario;
 var contratoComSignatario;
+var contratoSemSignatario;
 
-/*
-FUNCOES RELACIONADAS A OPERACOES COM METAMASK E CONTRATOS INTELIGENTES NO ETHEREUM
-*/
+function inicio() {
+ 
+  provedor = ethers.getDefaultProvider("rinkeby");
+  
+  contratoSemSignatario = new ethers.Contract(enderecoContrato, abiContrato, provedor);
+  buscarDadosDoContratoInteligente(contratoSemSignatario);
+}
+
 function conectaAoMetamask() {
   event.preventDefault();
   console.log("conectaAoMetamask chamado");
