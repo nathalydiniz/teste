@@ -43,12 +43,6 @@ function registroDoAnimal(_registro) {
       return;
     }
 
-    if ($("#_certificado").val().length < 2) {
-      alert("Certificado inválido");
-      $("#_certificado").focus();
-      return;
-    }
-   
     if (typeof contratoComSignatario === "undefined") {
       alert("Você não está conectado ao Ethereum. Verifique seu Metamask");
       return;
