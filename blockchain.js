@@ -59,7 +59,7 @@ function registroDoAnimal(_registro) {
             console.log("registro - o resultado foi ", resultado);
             if (resultado.status === 1) {
               $("#descricaoStatusTransacoes").html("Pet registrado eternamente");
-              $("#btnregistroDoAnimal").prop("disabled", true);              
+              $("#btnregistroDoAnimal").prop(true);              
             } else {
               $("#descricaoStatusTransacoes").html("Houve um erro no registro: " + resultado);
             }
