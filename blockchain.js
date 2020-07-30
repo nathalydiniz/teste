@@ -41,20 +41,21 @@ function registroDoAnimal() {
       alert("Você não está conectado ao Ethereum. Verifique seu Metamask");
       return;
     }
-  
+    
+      $("#descricaoStatusTransacoes").html("Transação enviada. Aguarde pela mineração...");
+      $("#statusTransacoes").show();
     contratoComSignatario
       .registroDoAnimal($("#_nome").val(), $("#_especie").val(), $("#_sexo").val(), $("#_criador").val(), $("#_tutor").val(), $("#_LocalDeNascimento").val(), $("#_registro").val(), ($("#_dataDeNascimento").val() * 1))
       .then((transacao) => {
-        $("#descricaoStatusTransacoes").html("Transação enviada. Aguarde pela mineração...");
-        $("#statusTransacoes").toggle();
         transacao
           .wait()
           .then((resultado) => {
             console.log("registro - o resultado foi ", resultado);
             if (resultado.status === 1) {
-              $("#descricaoStatusTransacoes").html("Transação executada.");
+              $("#descricaoStatusTransacoes").html("Pet registrado eternamente");
+              $("#btnregistroDoAnimal").prop("disabled", true);              
             } else {
-              $("#descricaoStatusTransacoes").html("Houve um erro na execução da transação no Ethereum.");
+              $("#descricaoStatusTransacoes").html("Houve um erro no registro: " + resultado);
             }
           })
           .catch((err) => {
