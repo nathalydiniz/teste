@@ -46,7 +46,7 @@ function gerenciaTrocaDeSelecaoDeContas(_contas) {
     contaAtual = contas[0];
     if (contaAtual) {
       console.log("gerenciaTrocaDeSelecaoDeContas objects", contas, contaAtual, signatario, contratoComSignatario);
-      $("#btnSalvar").prop("disabled", false);
+      $("#btnregistroDoAnimal").prop("disabled", false);
     }
   }
 }
