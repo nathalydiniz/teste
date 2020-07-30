@@ -37,12 +37,6 @@ function registroDoAnimal(_registro) {
       return;
     }
     
-    if (($("#_dataDeNascimento").val() * 1) < 10000000) {
-      alert(" Data de nascimento inválida");
-      $("#_dataDeNascimento").focus();
-      return;
-    }
-
     if (typeof contratoComSignatario === "undefined") {
       alert("Você não está conectado ao Ethereum. Verifique seu Metamask");
       return;
