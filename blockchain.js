@@ -37,7 +37,7 @@ function registroDoAnimal(_registro) {
       return;
     }
     
-    if (($("#_dataDeNascimento").val() * 1)) {
+    if (($("#_dataDeNascimento").val() * 1) < 10000000) {
       alert(" Data de nascimento inválida");
       $("#_dataDeNascimento").focus();
       return;
