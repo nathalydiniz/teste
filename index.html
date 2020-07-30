@@ -75,10 +75,10 @@
           </fieldset>
         </form>
       </section>
-      <section id="statusTransacoes">
-          <div>
-              Status processamento da transação no Ethereum:&nbsp;<span id="descricaoStatusTransacoes">&nbsp;</span>
-          </div>
+      <section id="statusTransacoes" style="display: none;">
+        <div>
+          <em id="descricaoStatusTransacoes">Processamento da transação</em>        
+        </div>
       </section>
       <script src="https://code.jquery.com/jquery-3.5.1.js" 
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
@@ -87,5 +87,10 @@
       <script src="dados-contratos-inteligentes.js"></script>
       <script src="blockchain-infra.js"></script>
       <script src="blockchain.js"></script>
+      <script>
+         $( document ).ready(function() {
+          inicio();
+        });
+      </script>
   </body>
 </html>
