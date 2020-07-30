@@ -1,0 +1,21 @@
+body {
+    background-image: url('fundo-teste-site.png');
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 200%;
+  }
+  
+  header {
+    margin-bottom: 50px;
+  }
+
+
+  div {
+    margin-bottom: 25px;
+  }
+  
+  #texto {
+    text-align: center;
+  }
