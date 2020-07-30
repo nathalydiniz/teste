@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
   <title>PetChain</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="estilo.css">
@@ -13,11 +13,11 @@
       <h1>
         Registro PetChain
       </h1>
-      <h2 id="ethernize" style="display: none;">
+      <h2>
         Ethernize seu pet 
       </h2>
     </header>
-    <section id="informacoes" style="display: none;">
+    <section>
       <br>
       <form name="formAnimal" id="formAnimal">
         <fieldset>
@@ -58,37 +58,32 @@
             <input type="number" name="_dataDeNascimento" id="_dataDeNascimento">
           </div>
           <div>
-            <label for="_registro"  style="font-size:80%"> Registro: </label>
-            <input type="number" name="_registro" id="_registro">
+            <label for="_certificado" style="font-size:80%"> Certificado: </label>
+            <input type="number" name="_registro" id="_certificado">
           </div>
           <div>
             <div>
-              <button id="btnRegistrar" style="font-size:70%" onclick="registro();" disabled>💾 Registrar</button>
+              <button id="btnregistroDoAnimal" style="font-size:70%" onclick="registroDoAnimal();">💾 Registrar</button>
             </div>
             <div>
-              <button style="font-size:70%" onclick="conectaAoMetamask();">⚡ Conectar ao Metamask </button>
+              <button id="btnConectaMetamesk" style="font-size:70%" onclick="conectaAoMetamask();">⚡ Conectar ao Metamask </button>
             </div>
           </div>
         </fieldset>
       </form>
     </section>
     <section id="statusTransacoes" style="display: none;">
-      <div>
-        <em id="descricaoStatusTransacoes">Status temporario</em>        
-      </div>
+        <div>
+            Status processamento da transação no Ethereum:&nbsp;<span id="descricaoStatusTransacoes">&nbsp;</span>
+          </div>
+        </section>
     </section>
-  </div>
-  </body>
-<script src="https://code.jquery.com/jquery-3.5.1.js" 
+  <script src="https://code.jquery.com/jquery-3.5.1.js" 
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
 <script src="https://cdn.ethers.io/lib/ethers-5.0.umd.min.js" type="text/javascript"></script>
 <script src="dados-contratos-inteligentes.js"></script>
-<script src="blockchain-infra.js"></script>
-<script>
-
-  $( document ).ready(function() {
-    inicio();
-  });
+<script src="blockchain-infra.js">
 </script>
+</body>
 </html>
