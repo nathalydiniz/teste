@@ -12,8 +12,7 @@ function inicio() {
   provedor = ethers.getDefaultProvider("rinkeby");
   
   contratoSemSignatario = new ethers.Contract(enderecoContrato, abiContrato, provedor);
-  buscarDadosDoContratoInteligente(contratoSemSignatario);
-}
+  }
 
 function conectaAoMetamask() {
   event.preventDefault();
