@@ -13,68 +13,54 @@
       <h1>
         Registro PetChain
       </h1>
-      <h3 id="" style="display: none;">
+      <h2 id="ethernize" style="display: none;">
         Ethernize seu pet 
-      </h3>
+      </h2>
     </header>
     <section id="informacoes" style="display: none;">
-      <div>
-        <mark>Previa da votação</mark>
-      </div>
       <br>
-
-      
       <form name="formAnimal" id="formAnimal">
         <fieldset>
           <legend class="textoImportante"style="font-size:100%">Preencha os campos abaixo para registrar seu pet &nbsp;</legend>
           <br/>
-
           <div>
             <label for="_nome" style="font-size:80%">Nome do animal:</label>
             <br>
             <input type="text" name="_nome" id="_nome" size="100">
           </div>
-
           <div>
             <label for="_especie" style="font-size:80%">Espécie:</label>
             <br>
             <input type="text" name="_especie" id="_especie" size="100">
           </div>
-
           <div>
             <label for="_sexo"  style="font-size:80%">Sexo:</label>
             <br>
             <input type="text" name="_sexo" id="_sexo" size="100">
           </div>
-                
-          <div id="divEnderecoCriador">
+                       <div id="divEnderecoCriador">
             <label for="_criador" style="font-size:80%"> Endereço Ethereum do Criador </label>
             <br>
             <input type="text" id="_criador" name="_criador" size="60" maxlength="60" >
           </div>
-
           <div id="divEnderecoTutor">
             <label for="_tutor" style="font-size:80%"> Endereço Ethereum do Tutor </label>
             <br>
             <input type="text" id="_tutor" name="_tutor" size="60" maxlength="60" >
           </div>
-
           <div>
             <label for="_LocalDeNascimento" style="font-size:80%">Local de nascimento:</label>
             <br>
             <input type="text" name="_LocalDeNascimento" id="_LocalDeNascimento" size="100">
           </div>
-
           <div>
             <label for="_dataDeNascimento" style="font-size:80%"> Data de Nascimento: </label>
             <input type="number" name="_dataDeNascimento" id="_dataDeNascimento">
           </div>
-
           <div>
             <label for="_registro"  style="font-size:80%"> Registro: </label>
             <input type="number" name="_registro" id="_registro">
           </div>
-
           <div>
             <div>
               <button id="btnRegistrar" style="font-size:70%" onclick="registro();" disabled>💾 Registrar</button>
@@ -83,17 +69,14 @@
               <button style="font-size:70%" onclick="conectaAoMetamask();">⚡ Conectar ao Metamask </button>
             </div>
           </div>
-
         </fieldset>
       </form>
     </section>
-
     <section id="statusTransacoes" style="display: none;">
       <div>
         <em id="descricaoStatusTransacoes">Status temporario</em>        
       </div>
     </section>
   </div>
- 
-</body>
+ </body>
 </html>
