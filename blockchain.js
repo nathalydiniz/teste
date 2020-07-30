@@ -18,7 +18,7 @@ function registro() {
     }
   
     contratoComSignatario
-      .registro($("#_nome").val(), $("#_especie").val(), $("#_sexo").val(), $("#_criador").val(), $("#_tutor").val(), $("#_LocalDeNascimento").val(), $("#_dataDeNascimento").val(), $("#_registro").val(),* 1)
+      .registro($("#_nome").val(), $("#_especie").val(), $("#_sexo").val(), $("#_criador").val(), $("#_tutor").val(), $("#_LocalDeNascimento").val(), $("#_dataDeNascimento").val(), $("#_registro").val() * 1)
       .then((transacao) => {
         $("#descricaoStatusTransacoes").html("Transação enviada. Aguarde pela mineração...");
         $("#statusTransacoes").toggle();
