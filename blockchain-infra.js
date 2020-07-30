@@ -57,5 +57,3 @@ function gerenciaTrocaDeSelecaoDeContas(_contas) {
     }
   }
 }
-
-var abiContratoInteligente;

@@ -1,4 +1,4 @@
-function registroDoAnimal() {
+function registroDoAnimal(_registro) {
     event.preventDefault();
     
     if ($("#_nome").val().length < 2) {
@@ -19,15 +19,15 @@ function registroDoAnimal() {
       return;
     }
 
-    if ($("#_tutor","#_criador").val().length != 42) {
-      $("#_tutor","#_criador").focus();
+    if (!$("#_criador").val().startsWith("0x")) {
       alert("Endereço inválido");
+      $("#_criador").focus();
       return;
     }
   
-    if (!$("#_tutor","#_criador").val().startsWith("0x")) {
+    if (!$("#_tutor").val().startsWith("0x")) {
       alert("Endereço inválido");
-      $("#_tutor","#_criador").focus();
+      $("#_tutor").focus();
       return;
     }
 
@@ -35,7 +35,19 @@ function registroDoAnimal() {
       alert("Local de nascimento inválido");
       $("#_LocalDeNascimento").focus();
       return;
-    }   
+    }
+    
+    if (($("#_dataDeNascimento").val() * 1)) {
+      alert(" Data de nascimento inválida");
+      $("#_dataDeNascimento").focus();
+      return;
+    }
+
+    if ($("#_certificado").val().length < 2) {
+      alert("Certificado inválido");
+      $("#_certificado").focus();
+      return;
+    }
    
     if (typeof contratoComSignatario === "undefined") {
       alert("Você não está conectado ao Ethereum. Verifique seu Metamask");
@@ -45,7 +57,7 @@ function registroDoAnimal() {
       $("#descricaoStatusTransacoes").html("Transação enviada. Aguarde pela mineração...");
       $("#statusTransacoes").show();
     contratoComSignatario
-      .registroDoAnimal($("#_nome").val(), $("#_especie").val(), $("#_sexo").val(), $("#_criador").val(), $("#_tutor").val(), $("#_LocalDeNascimento").val(), $("#_registro").val(), ($("#_dataDeNascimento").val() * 1))
+      .registroDoAnimal(_registro)
       .then((transacao) => {
         transacao
           .wait()
